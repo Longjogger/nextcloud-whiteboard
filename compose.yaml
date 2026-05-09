@@ -1,0 +1,12 @@
+services:
+  nextcloud-whiteboard:
+    container_name: nextcloud-whiteboard
+    env_file: .env
+    image: ghcr.io/nextcloud-releases/whiteboard:stable
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+    environment:
+      - NEXTCLOUD_URL=${NC_URL}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - MAX_UPLOAD_FILE_SIZE=${MAX_UPLOAD_FILE_SIZE}
