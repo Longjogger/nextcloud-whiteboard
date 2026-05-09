@@ -27,9 +27,11 @@ This Docker Compose file helps you run [Nextcloud's Whiteboard app](https://apps
 1. Configure your Nextcloud Apache configuration file:
 
    Open the Apache configuration:
+
    `sudo vi /etc/apache2/sites-available/nextcloud.conf`
 
    Add the following line to your virtual host configuration:
+   
    `ProxyPass /whiteboard/ http://localhost:3002/ upgrade=websocket`
 
 2. Reload the configuration:
